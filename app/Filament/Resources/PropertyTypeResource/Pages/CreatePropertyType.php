@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Filament\Resources\PropertyTypeResource\Pages;
+
+use App\Filament\Resources\PropertyTypeResource;
+use Filament\Resources\Pages\CreateRecord;
+
+class CreatePropertyType extends CreateRecord
+{
+    protected static string $resource = PropertyTypeResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+
+        ];
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return static::getResource()::getUrl('index');
+    }
+}
