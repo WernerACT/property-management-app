@@ -95,7 +95,7 @@ class Property extends Model
     public function calculateIncome(array $transactionTypes): float
     {
         return $this->transactions()
-            ->whereHas('transaction_type', function ($query) use ($transactionTypes) {
+            ->whereHas('transactionType', function ($query) use ($transactionTypes) {
                 $query->whereIn('name', $transactionTypes);
             })
             ->sum('amount') ?? 0;
